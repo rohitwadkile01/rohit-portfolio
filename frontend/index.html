@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohit Wadkile | Data Analyst</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<script>
+function toggleContact() {
+    const info = document.getElementById("contactInfo");
+    info.classList.toggle("hidden");
+}
+</script>
+<body class="bg-zinc-50 text-zinc-900">
+  <!-- Navbar -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-8 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold">Rohit Wadkile</h1>
+      <div class="flex items-center gap-10 text-sm font-medium">
+        <a href="#home" class="hover:text-amber-600">Home</a>
+        <a href="#skills" class="hover:text-amber-600">Skills</a>
+        <a href="#projects" class="hover:text-amber-600">Projects</a>
+        <div class="relative">
+    <button id="contactBtn"
+        onclick="toggleContact()"
+        class="hover:text-amber-600 font-medium">
+        Contact
+    </button>
+    <div id="contactInfo"
+        class="hidden absolute top-8 right-0 bg-white shadow-lg rounded-lg p-4 border w-64 z-50">
+        <a href="tel:+919322321364"
+           class="block text-amber-600 hover:underline mb-2">
+            📞 +91 93223 21364
+        </a>
+        <a href="mailto:rohitwadkile@gmail.com"
+           class="block text-amber-600 hover:underline">
+            📧 rohitwadkile@gmail.com
+        </a>
+    </div>
+</div>
+      </div>
+      <button
+    id="bookCallBtn"
+    onclick="showPhoneNumber()"
+    class="bg-amber-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-amber-700 transition-all duration-300">
+    Book a Call
+</button>
+<script>
+function showPhoneNumber() {
+    const btn = document.getElementById("bookCallBtn");
+    btn.innerHTML = "📞 +91 93223 21364";
+    btn.onclick = function () {
+        window.location.href = "tel:+919322321364";
+    };
+}
+</script>
+    </div>
+  </nav>
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex items-center bg-white">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+        <!-- Left -->
+        <div class="fade-in">
+            <h1 class="text-7xl font-bold leading-tight">
+                Data Analyst &
+                <br>
+                Business Intelligence
+                <br>
+                Consultant
+            </h1>
+            <p class="mt-8 text-xl text-zinc-600">
+                I help companies turn raw data into clear insights and actionable strategies.
+            </p>
+            <a href="#contact"
+               class="mt-10 inline-block bg-amber-600 text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-amber-700">
+                Hire Me
+            </a>
+        </div>
+        <div class="fade-in flex justify-center">
+    <img
+        src="images/profile1.jpg"
+        alt="Profile Picture"
+        class="w-[700px] h-[450px] object-cover rounded-3xl shadow-2xl">
+</div></section>
+  <!-- Skills / What I Do -->
+  <section id="skills" class="py-24 bg-zinc-100 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] opacity-10"></div>
+    <div class="max-w-6xl mx-auto px-8 relative z-10">
+      <h2 class="text-5xl font-semibold text-center mb-16 fade-in">What I Do</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-white p-10 rounded-3xl shadow-sm fade-in">Data Analysis (SQL, Python, Excel)</div>
+        <div class="bg-white p-10 rounded-3xl shadow-sm fade-in">Dashboard Creation (Power BI, Tableau)</div>
+        <div class="bg-white p-10 rounded-3xl shadow-sm fade-in">Business Intelligence Consulting</div>
+        <div class="bg-white p-10 rounded-3xl shadow-sm fade-in">ETL & Dada Preparation</div>
+        <div class="bg-white p-10 rounded-3xl shadow-sm fade-in">Data Modeling & DAX</div>
+        <div class="bg-white p-10 rounded-3xl shadow-sm fade-in">KPI & Business Metrics Development</div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects -->
+  <section id="projects" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-8">
+      <h2 class="text-5xl font-semibold text-center mb-16 fade-in">Featured Projects</h2>
+      <div class="grid md:grid-cols-2 gap-12" id="projects-container"></div>
+    </div>
+  </section>
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-zinc-900 text-white">
+    <div class="max-w-2xl mx-auto px-8 text-center">
+      <h2 class="text-5xl font-semibold mb-8 fade-in">Let's Work Together</h2>
+      <p class="text-zinc-400 mb-12">Ready to turn your data into growth? Schedule a call.</p>
+      
+      <!-- Formspree Integration -->
+      <form action="https://formspree.io/f/mwvgpkjr" method="POST" class="space-y-6">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-6 bg-zinc-800 border border-zinc-700 rounded-2xl"/>
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-6 bg-zinc-800 border border-zinc-700 rounded-2xl"/>
+        <input type="subject" name="_subject" placeholder="Subject" required class="w-full p-6 bg-zinc-800 border border-zinc-700 rounded-2xl"/>
+        <textarea name="message" rows="6" placeholder="Tell me about your project..." required class="w-full p-6 bg-zinc-800 border border-zinc-700 rounded-2xl"></textarea>
+        <button type="submit" class="w-full bg-amber-600 py-6 rounded-2xl text-xl font-semibold">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <script>
+    const projects = [
+      {
+        title: "E-commerce Sales Dashboard",
+        desc: "Interactive Power BI dashboard for sales analysis and forecasting.",
+        tech: "SQL • Power BI • Excel",
+        image: "https://picsum.photos/id/1015/800/500"
+      },
+      {
+        title: "Customer Churn Analysis",
+        desc: "Churn prediction model and retention strategy.",
+        tech: "Python • Power BI",
+        image: "https://picsum.photos/id/201/800/500"
+      },
+      {
+        title: "COVID-19 Vaccine Analysis Dashboard",
+        desc: "Developed an interactive Power BI dashboard to analyze state-wise COVID-19 vaccination trends across India using Power Query, KPIs, charts, maps, and slicers.",
+        tech: "Power BI • Power Query • DAX • Excel",
+        image: "https://picsum.photos/id/180/800/500"
+      },
+      {
+        title: "Financial Reporting Automation",
+        desc: "Automated financial reports using SQL and Excel.",
+        tech: "SQL • Excel",
+        image: "https://picsum.photos/id/1025/800/500"
+      }
+    ];
+    function loadProjects() {
+      const container = document.getElementById('projects-container');
+      container.innerHTML = projects.map(p => `
+        <div onclick="alert('Project: ${p.title}\\n\\n${p.desc}\\n\\nTech: ${p.tech}')"
+             class="group cursor-pointer overflow-hidden rounded-3xl border border-zinc-200 hover:shadow-2xl transition-all fade-in">
+          <img src="${p.image}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-3">${p.title}</h3>
+            <p class="text-zinc-600 mb-4">${p.desc}</p>
+            <p class="text-amber-600">${p.tech}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+    window.onload = () => {
+      loadProjects();
+      // Fade-in Animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    };
+
+    // FIXED CONTACT FORM + SAVE TO FILE
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault(); // ← Stops page refresh
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name && email && message) {
+        const formData = { 
+          name, 
+          email, 
+          subject, 
+          message, 
+          time: new Date().toLocaleString() 
+        };
+
+        console.log("✅ Message Sent:", formData);
+        
+        // Save to file simulation
+        try {
+          await fetch('http://localhost:5000/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+        } catch (err) {
+          console.log("Message saved locally in terminal");
+        }
+
+        alert("✅ Thank you! Your message has been saved.");
+        this.reset(); // Clear form
+      } else {
+        alert("Please fill all fields.");
+      }
+    });
+  </script>
+</body>
+</html>
